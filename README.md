@@ -1,11 +1,11 @@
 # 💻 Portfólio - Renan Rodrigues
 
 🔗 Acesse o projeto:  
-👉 https://portifolio-hz8ghlire-re-rodrigues-projects.vercel.app
+https://portifolio-hz8ghlire-re-rodrigues-projects.vercel.app
 
 ---
 
-## 🚀 Sobre
+## Sobre
 
 Este é o meu portfólio pessoal, desenvolvido para apresentar minhas habilidades e tecnologias.
 
@@ -13,7 +13,7 @@ O projeto foi pensado com foco em um design moderno, minimalista e responsivo, d
 
 ---
 
-## 🧠 Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - HTML
 - CSS
