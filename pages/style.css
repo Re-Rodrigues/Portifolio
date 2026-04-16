@@ -1,268 +1,329 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-
-* {
-    font-family: "Varela Round", sans-serif;
+:root {
+  --bg: #f7f5f2;
+  --bg2: #f0ede8;
+  --text: #1a1a1a;
+  --muted: #888880;
+  --accent: #2d5a3d;
+  --border: #e0dbd4;
+  --card: #ffffff;
 }
 
-.paragraph span {
-    display: block;
-    opacity: 0;
-    animation: reveal 0.5s forwards var(--d);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes reveal {
-    from {
-        transform: opacity 0;
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
+html {
+  scroll-behavior: smooth;
 }
 
-/*Pagina 1*/
-
-.main {
-    color: white;
-    margin: 10%;
-    padding: 5%;
-    font-style: initial
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
-.bmain {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    background-image: url(../img/main.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 5rem;
+  background: rgba(247, 245, 242, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
-.social a {
-    padding: 10px;
-    margin-top: 5px;
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--text);
 }
 
-
-/*Pagina 2*/
-
-.C-sobre {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px;
-    width: 100%;
-    flex-wrap: wrap;
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
 }
 
-.foto img {
-    width: 400px;
-    height: auto;
-    box-shadow: 4px 4px 4px;
+.nav-links a {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-
-.Sobre-mim h1 {
-    text-align: center;
-    font-size: 55px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: bold;
+.nav-links a:hover {
+  color: var(--text);
 }
 
-.Sobre-mim h4 {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 25px;
-    font-weight: normal;
-    font-weight: bold;
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 5rem 6rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.Sobre-mim p {
-    margin-top: 25px;
-    font-family: "Varela Round", sans-serif;
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/main.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.10;
 }
 
-@media screen and (max-width: 800px) {
-    .Sobre-mim p {width: 100%;}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
 }
 
-/*Pagina 3*/
-
-.formação {
-    background-color: rgba(40, 34, 62, 255);
-    display: flex;
-    justify-content: space-around;
-    padding: 100px;
-    width: 100%;
-    flex-wrap: wrap;
+.hero-eyebrow {
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
 }
 
-.form-text h1 {
-    text-align: center;
-    font-size: 55px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 15%;
-    text-decoration: underline;
-    margin-top: 100px;
+.hero h1 {
+  font-family: sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
 }
 
-.form-text p {
-    margin-top: 5px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: white;
-    font-size: 20px;
+.hero h1 em {
+  color: var(--text);
+  font-style: normal;
 }
 
-.form-img img {
-    width: 430px;
-    height: auto;
+.hero-bottom {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
-/*Pagina 4*/
-
-.atuação {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px;
-    width: 100%;
-    flex-wrap: wrap;
-    background-color: rgba(40, 34, 62, 255);
+.hero-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 360px;
+  line-height: 1.7;
 }
 
-.atuação img{
-    width: 430px;
-    height: auto;
+.hero-socials {
+  display: flex;
+  gap: 1.25rem;
 }
 
-.atuação h1 {
-    text-align: center;
-    font-size: 55px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: bold;
-    margin-bottom: 5%;
-    text-decoration: underline;
-    color: white;
-    margin-top: 100px;
+.hero-socials a {
+  color: var(--muted);
+  font-size: 1.1rem;
 }
 
-.atuação-txt h4 {
-    text-align: center;
-    font-size: 25px;
-    font-weight: normal;
-    font-weight: bold;
-    margin-bottom: 60px;
-    color: white;
+.hero-socials a:hover {
+  color: var(--text);
 }
 
-.atuação p {
-    margin-top: 5px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    letter-spacing: 1px;
-    color: white;
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
 }
 
-/*Pagina 5*/
-
-.projetos {
-    justify-content: space-around;
-    padding: 50px;
-    width: 100%;
-    flex-wrap: wrap;
-    background-color: #28223e;
+section {
+  padding: 7rem 5rem;
 }
 
-.projetos h1 {
-    text-align: center;
-    font-size: 55px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: bold;
-    margin-bottom: 5%;
-    text-decoration: underline;
-    color: white;
-    margin-top: 100px
+.section-num {
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
 }
 
-.projetos-displaypt1 {
-    display: flex;
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 3.5rem;
 }
 
-.projetos-displaypt2 {
-    margin-top: 2%;
-    display: flex;
+#sobre {
+  background: var(--bg2);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 7rem;
+  align-items: center;
 }
 
-/*Pagina 6*/
-
-.contato {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px;
-    width: 100%;
-    flex-wrap: wrap;
-    background-color: #28223e;
+.sobre-img {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
 }
 
-.contato h1 {
-    text-align: center;
-    font-size: 55px;
-    font-family: "Varela Round", sans-serif;
-    font-weight: bold;
-    margin-bottom: 20%;
-    text-decoration: underline;
-    color: white;
+.sobre-text p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
 }
 
-.contato p {
-    margin-top: 100px;
-    font-size: 20px;
+.sobre-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
 }
 
-.contato button {
-    cursor: pointer;
-    color: white;
-    font-size: 16px;
-    background: transparent;
-    border: 2px solid;
-    transition: all 1s;
-    margin-bottom: 20px;
-    align-items: center;
-    text-align: center;
-    margin-left: 35%;
-    border-color: white;
+.dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
 }
 
-.contato button:hover {
-    background-color: white;
-    color: black;
-    border-radius: 16px;
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
-/*Rodapé*/
-
-.rodapé {
-    background-color: #3e223f;
-    text-align: center;
+#formacao {
+  background: var(--bg);
 }
 
-.rodapé h1 {
-    font-size: 30px;
-    font-family: "Varela Round", sans-serif;
-    color: #0c6cfb;
+.formacao-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
 }
 
-.rodapé-social a {  
-    font-size: 30px;
+.formacao-img {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  border-radius: 10px;
+  padding: 5px;
 }
 
-.rodapé h5 {
-    font-size: 20px;
-    font-family: "Varela Round", sans-serif;
-    color: #0c6cfb;
-    background-color: #3e223f;
+.formacao-info h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.formacao-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  background: var(--card);
+}
+
+#tecnologias {
+  background: var(--bg2);
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-tag {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: var(--card);
+}
+
+#contato {
+  background: var(--text);
+  color: white;
+}
+
+.contato-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.contato-link {
+  display: block;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  margin-bottom: 0.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+footer {
+  background: var(--text);
+  color: rgba(255,255,255,0.3);
+  padding: 2rem;
+  text-align: center;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  section {
+    padding: 5rem 1.5rem;
+  }
+
+  #sobre {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero {
+    padding: 0 1.5rem 5rem;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contato-inner {
+    grid-template-columns: 1fr;
+  }
 }
